@@ -3,11 +3,12 @@
 # Created 9 July 2022 by Sam Gardner <stgardner4@tamu.edu>
 
 from datetime import datetime as dt, timedelta
-from os import path, chmod, remove, urandom
+from os import path, chmod, remove
 from pathlib import Path
 import json
 from atomicwrites import atomic_write
 from natsort import natsorted
+
 
 def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reloadInterval):
     """
@@ -83,7 +84,6 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
     elif productID == 101:
         productDesc = "Mesonet Farm Timeseries"
         productPath = "products/mesonet/Farm/timeseries/"
-        runPathExtension = "last24hrs"
         isFcst = False
         fileExt = "png"
         dispFrames = 1
@@ -100,7 +100,6 @@ def writeJson(basePath, productID, runTime, fileName, validTime, gisInfo, reload
     elif productID == 103:
         productDesc = "Mesonet Gardens Timeseries"
         productPath = "products/mesonet/Gardens/timeseries/"
-        runPathExtension = "last24hrs"
         isFcst = False
         fileExt = "png"
         dispFrames = 1
